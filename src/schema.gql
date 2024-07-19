@@ -1,0 +1,31 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserType {
+  message: String!
+  id: ID!
+  email: String!
+  password: String!
+}
+
+type loginResponseType {
+  access_token: String!
+}
+
+type Query {
+  users: [UserType!]!
+  getUser(id: Float!): UserType!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): UserType!
+  updateUser(id: Float!, updateUserInput: CreateUserInput!): UserType!
+  deleteUser(id: Float!): UserType!
+  signin(username: String!, password: String!): loginResponseType!
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
+}
